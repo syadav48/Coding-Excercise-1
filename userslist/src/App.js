@@ -2,6 +2,12 @@
 import React from 'react'; 
 import { useEffect, useState } from 'react';
 import './App.css';
+//import { Brightness1 } from '@mui/icons-material';
+
+import { MdNightsStay } from "react-icons/md";
+import {MdWbSunny} from 'react-icons/md'
+
+
 const url = 'https://reqres.in/api/users'
 
 function App() {
@@ -10,6 +16,7 @@ function App() {
  const [email, setEmail] = useState('')
  const [firstName, setFirstName] = useState('')
  const [lastName, setLastName] = useState('')
+ const [theme, setTheme] = useState('light');
 
 
   const fetchUsers = async () => {
@@ -20,6 +27,16 @@ function App() {
     setLoading(false)
     
   }
+
+
+
+  const toggleTheme = () => {
+    if (theme === 'light') {
+    setTheme('dark');
+    } else {
+    setTheme('light');
+  }
+  };
   
 
   const handleSubmit = async (e) => {
@@ -37,9 +54,17 @@ function App() {
   .then(response => response.json())
   .then(data => setUsers(data));
   }
+
+
   useEffect(() => {
     fetchUsers()
   }, [])
+
+
+  useEffect(() => {
+    document.body.className = theme;
+  }, [theme]);
+
   if (loading) {
     return (
       <section className="section loading">
@@ -49,7 +74,9 @@ function App() {
   }
   else{
     return(
-      <>
+      <div className={`${theme}`}>
+        {/* <button onClick={toggleTheme}>Toggle Theme</button> */}
+        { theme === 'light' ? <MdNightsStay className='icon' onClick={toggleTheme}/> : <MdWbSunny className='icon' onClick={toggleTheme}/> }
       <div className='tabler'>
       <table>
       <tr>
@@ -79,7 +106,7 @@ function App() {
     </tr>
     </table>
     </div>
-    </>
+    </div>
     )
   }
   

@@ -88,6 +88,23 @@ td, th {
   height: 30px;
 }
 
+.dark {
+  background-color: #333;
+  color: #fff;
+  }
+  .light {
+  background-color: #fff;
+  color: #333;
+  }
+
+  .icon{
+    width: 30px;
+    height: 40px;
+    float: right;
+    margin-right: 100px;
+
+  }
+
 
 
 /* tr:nth-child(even) {
