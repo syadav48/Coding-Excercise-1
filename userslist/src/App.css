@@ -36,3 +36,29 @@
     transform: rotate(360deg);
   }
 }
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 50%;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+.tabler{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+/* tr:nth-child(even) {
+  background-color: #dddddd;
+} */
