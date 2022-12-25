@@ -57,7 +57,7 @@ function Parkinglot(){
         setVehicle('')
         
         
-        console.log(arr, "rrrrrrrr");
+      
     }
     
     const handleSearch = () => {
@@ -89,7 +89,7 @@ function Parkinglot(){
              <label for="cars" className="labels">Choose the Vehicle Type and Enter the Vehicle Registration Number</label>
                 <div className="select">
                 <select name="cars" id="cars" onChange={e => setVehicle(e.target.value)}>
-                    <option value='' className="option">select</option>
+                    
                     <option value="bike">Bike</option>
                     <option value="car">Car</option>
                     <option value="suv">SUV</option>  
